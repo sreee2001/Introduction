@@ -1,6 +1,6 @@
-# Angular Portfolio Starter (Angular 21)
+# Angular Portfolio Starter (Angular 21) — GitHub Pages
 
-This repository is scaffolded as a single Angular application with monorepo-style internal boundaries so you can scale content safely without managing multiple deployables.
+A static, production-ready Angular 21 portfolio platform hosted on GitHub Pages. Pure SPA with no server-side rendering, perfect for content-heavy knowledge bases, tutorials, and portfolio showcases.
 
 ## Goals Covered
 
@@ -8,7 +8,18 @@ This repository is scaffolded as a single Angular application with monorepo-styl
 - Topic deep-dive sections
 - Industry-specific portfolio case studies
 - One well-architected codebase with feature boundaries
-- SSR-ready base for future SEO/public content needs
+- Static-site SEO optimization
+- Free GitHub Pages hosting with manual deployment control
+
+## Tech Stack
+
+- **Angular 21** — modern, standalone components
+- **TypeScript 5.9** — strict mode, path aliases
+- **TailwindCSS 4** — utility-first styling
+- **GitHub Pages** — free static hosting
+- **GitHub Actions** — CI/CD for manual deployments
+
+**No server required.** Pure static HTML, CSS, JS output.
 
 ## Architecture (Monorepo Style in One App)
 
@@ -34,17 +45,38 @@ npm install
 npm start
 ```
 
-Build for production:
+Opens dev server at http://localhost:4200/ with live reload.
+
+### Build for GitHub Pages
 
 ```bash
-npm run build
+npm run build:ghpages
 ```
 
-Serve SSR bundle after build:
+Output: `dist/angular-portfolio/browser/` (ready to deploy)
 
-```bash
-npm run serve:ssr:angular-portfolio
-```
+## Deployment
+
+### Manual Deployment via GitHub Pages
+
+1. Push your code to the `main` branch:
+   ```bash
+   git add .
+   git commit -m "Your changes"
+   git push origin main
+   ```
+
+2. Go to your repo's **Actions** tab in GitHub
+
+3. Select **"Deploy to GitHub Pages"** workflow on the left
+
+4. Click **Run workflow** → **Run workflow**
+
+The site updates at: **https://sreee2001.github.io/AngularPortfolio/**
+
+### Why Manual Deployment?
+
+Keeps your repo changes separate from published content. You can develop and push code freely without triggering site updates. Deploy only when content is ready for public viewing.
 
 ## Suggested Implementation Plan
 
@@ -70,7 +102,8 @@ When you are ready, add:
 ## Why This Starter Works for Large Scale
 
 - Strict TypeScript and strict Angular template checks enabled
-- Route-level lazy loading already configured
+- Route-level lazy loading already configured (4 feature chunks pre-wired)
 - Typed content contracts included
-- SSR entrypoints already wired
+- Client-side SPA routing with GitHub Pages 404 fallback
 - Path aliases configured for maintainable imports
+- GitHub Actions workflow for zero-friction publishing
