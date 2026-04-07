@@ -1,0 +1,26 @@
+:root {
+    --surface-1: #f8fafc;
+    --surface-2: #ffffff;
+    --line: #dbe2ea;
+    --text-main: #0f172a;
+    --text-soft: #4a5b73;
+    --brand: #0d9488;
+    --brand-soft: #ccfbf1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+    background: radial-gradient(circle at 15% 15%, #e2e8f0 0%, #f8fafc 35%, #f1f5f9 100%);
+    color: var(--text-main);
+}
+
+a {
+    color: inherit;
+}
