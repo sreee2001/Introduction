@@ -6,9 +6,9 @@
         "start": "ng serve",
         "typecheck": "tsc -p tsconfig.app.json --noEmit",
         "build": "ng build",
+        "build:ghpages": "ng build --base-href /AngularPortfolio/",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test",
-        "serve:ssr:angular-portfolio": "node dist/angular-portfolio/server/server.mjs"
+        "test": "ng test"
     },
     "private": true,
     "packageManager": "npm@11.9.0",
